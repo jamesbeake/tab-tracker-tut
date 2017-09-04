@@ -1,0 +1,16 @@
+---
+version: '3.2'
+
+services:
+  app:
+    build: .
+    image: jamesbeake/tab-tracker:0.1
+    container_name: tab-tracker
+    ports:
+      - "80:80"
+    entrypoint: ["sleep", "50000"]
+    volumes:
+      - ./app:/app
+
+
+#volumes:
