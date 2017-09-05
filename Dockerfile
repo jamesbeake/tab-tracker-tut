@@ -2,7 +2,8 @@ FROM node:latest
 
 RUN npm install -g vue-cli
 
-COPY ./app /app
+COPY ./app/client /app
 WORKDIR /app
 
-ENTRYPOINT ["node", "--version"]
+ENTRYPOINT ["npm"]
+CMD ["--version"]

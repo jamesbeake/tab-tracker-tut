@@ -2,15 +2,22 @@
 version: '3.2'
 
 services:
-  app:
+  client:
     build: .
     image: jamesbeake/tab-tracker:0.1
-    container_name: tab-tracker
+    container_name: tab-tracker-vue
     ports:
-      - "80:80"
-    entrypoint: ["sleep", "50000"]
+      - "8080:8080"
+    command: ["run", "dev"]
     volumes:
-      - ./app:/app
+      - ./app/client:/app
 
-
+  server:
+    image:  jamesbeake/tab-tracker:0.1
+    container_name: tab-tracker-express
+    ports:
+      - "3000:3000"
+    command: ["start"]
+    volumes:
+      - ./app/server:/app
 #volumes:
