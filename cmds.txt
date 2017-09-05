@@ -1,0 +1,4 @@
+Initialise client
+...
+#Initialise server
+docker run --rm -v ${pwd}/app:/app -w /app/server node npm init -f
