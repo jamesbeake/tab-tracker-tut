@@ -2,8 +2,15 @@ FROM node:8.5.0-alpine
 
 RUN npm install -g vue-cli
 
-VOLUME ["/app"]
+COPY app/client /app
+
 WORKDIR /app
 
+RUN npm install
+
+VOLUME ["/app"]
+
+EXPOSE 80
+
 ENTRYPOINT ["npm"]
-CMD ["--version"]
+CMD ["start"]

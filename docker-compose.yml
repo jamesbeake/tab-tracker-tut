@@ -3,21 +3,26 @@ version: '3.2'
 
 services:
   client:
-    build: .
-    image: jamesbeake/tab-tracker:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image: jamesbeake/tab-tracker-client:0.1
     container_name: tab-tracker-vue
     ports:
       - "8080:8080"
     command: ["run", "dev"]
-    volumes:
-      - ./app/client:/app
+#    volumes:
+#      - ./app/client:/app
 
   server:
-    image:  jamesbeake/tab-tracker:0.1
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    image:  jamesbeake/tab-tracker-server:0.1
     container_name: tab-tracker-express
     ports:
       - "3000:3000"
     command: ["start"]
-    volumes:
-      - ./app/server:/app
+#    volumes:
+#      - ./app/server:/app
 #volumes:
