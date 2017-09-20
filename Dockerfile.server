@@ -5,7 +5,8 @@ COPY app/server /app
 WORKDIR /app
 RUN npm install
 
-VOLUME ["/app"]
+#VOLUME ["/app/data", "/app/src", "/app/package-lock.json", "/app/package.json"]
+
 EXPOSE 3000
 
 ENTRYPOINT ["npm"]

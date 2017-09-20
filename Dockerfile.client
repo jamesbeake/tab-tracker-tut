@@ -8,7 +8,7 @@ WORKDIR /app
 
 RUN npm install
 
-VOLUME ["/app"]
+#VOLUME ["/app"]
 
 EXPOSE 80
 
